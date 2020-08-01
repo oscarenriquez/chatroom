@@ -6,14 +6,12 @@ import com.udacity.jwdnd.chatroom.model.ChatMessage;
 public class ChatMessageConverter {
 
     public static ChatMessage convertChatForm(ChatForm chatForm) {
-        ChatMessage chatMessage = (ChatMessage) chatForm;
-        switch (chatMessage.getMessageType()){
-            case "Shout":
-                chatMessage.setMessageText(chatMessage.getMessageText().toUpperCase());
-                break;
-            case "Whisper":
-                chatMessage.setMessageText(chatMessage.getMessageText().toLowerCase());
-                break;
+        ChatMessage chatMessage = new ChatMessage();
+        chatMessage.setUsername(chatForm.getUsername());
+        switch (chatForm.getMessageType()) {
+            case "Say" -> chatMessage.setMessage(chatForm.getMessageText());
+            case "Shout" -> chatMessage.setMessage(chatForm.getMessageText().toUpperCase());
+            case "Whisper" -> chatMessage.setMessage(chatForm.getMessageText().toLowerCase());
         }
         return chatMessage;
     }
