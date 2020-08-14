@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -26,7 +26,7 @@
     <input type="submit">
 </form>
 <div th:each="chatMessage : ${chatMessages}">
-    <span th:text="${chatMessage.username}">Username</span>: <span th:text="${chatMessage.message}">Hello, world!</span>
+    <span th:text="${chatMessage.username}">Username</span>: <span th:text="${chatMessage.messageText}">Hello, world!</span>
 </div>
 </body>
 </html>

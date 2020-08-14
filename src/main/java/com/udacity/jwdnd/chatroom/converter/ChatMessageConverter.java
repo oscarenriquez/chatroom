@@ -9,9 +9,9 @@ public class ChatMessageConverter {
         ChatMessage chatMessage = new ChatMessage();
         chatMessage.setUsername(chatForm.getUsername());
         switch (chatForm.getMessageType()) {
-            case "Say" -> chatMessage.setMessage(chatForm.getMessageText());
-            case "Shout" -> chatMessage.setMessage(chatForm.getMessageText().toUpperCase());
-            case "Whisper" -> chatMessage.setMessage(chatForm.getMessageText().toLowerCase());
+            case "Say" -> chatMessage.setMessageText(chatForm.getMessageText());
+            case "Shout" -> chatMessage.setMessageText(chatForm.getMessageText().toUpperCase());
+            case "Whisper" -> chatMessage.setMessageText(chatForm.getMessageText().toLowerCase());
         }
         return chatMessage;
     }
